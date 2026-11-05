@@ -1,0 +1,8 @@
+2026-11-05T09:00:01+03:00 lima-linux-oom-lab CRON[4834]: (root) CMD
+(/opt/linux-oom-lab/monitor.sh >> /var/log/linux-oom-lab/cron.log 2>&1)
+2026-11-05T09:05:01+03:00 lima-linux-oom-lab CRON[5114]: (root) CMD
+(/opt/linux-oom-lab/monitor.sh >> /var/log/linux-oom-lab/cron.log 2>&1)
+2026-11-05T09:10:01+03:00 lima-linux-oom-lab CRON[5390]: (root) CMD
+(/opt/linux-oom-lab/monitor.sh >> /var/log/linux-oom-lab/cron.log 2>&1)
+2026-11-05T09:15:01+03:00 lima-linux-oom-lab CRON[5726]: (root) CMD
+(/opt/linux-oom-lab/monitor.sh >> /var/log/linux-oom-lab/cron.log 2>&1)

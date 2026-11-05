@@ -1,0 +1,18 @@
+2026-11-05T09:00:01+03:00 lima-linux-oom-lab CRON[4833]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-11-05T09:00:01+03:00 lima-linux-oom-lab CRON[4834]: (root) CMD (/opt/linux-oom-lab/monitor.sh >> /var/log/linux-oom-lab/cron.log 2>&1)
+2026-11-05T09:00:03+03:00 lima-linux-oom-lab CRON[4833]: pam_unix(cron:session): session closed for user root
+2026-11-05T09:05:01+03:00 lima-linux-oom-lab CRON[5113]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-11-05T09:05:01+03:00 lima-linux-oom-lab CRON[5112]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-11-05T09:05:01+03:00 lima-linux-oom-lab CRON[5114]: (root) CMD (/opt/linux-oom-lab/monitor.sh >> /var/log/linux-oom-lab/cron.log 2>&1)
+2026-11-05T09:05:01+03:00 lima-linux-oom-lab CRON[5115]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+2026-11-05T09:05:01+03:00 lima-linux-oom-lab CRON[5112]: pam_unix(cron:session): session closed for user root
+2026-11-05T09:05:03+03:00 lima-linux-oom-lab CRON[5113]: pam_unix(cron:session): session closed for user root
+2026-11-05T09:10:01+03:00 lima-linux-oom-lab CRON[5389]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-11-05T09:10:01+03:00 lima-linux-oom-lab CRON[5390]: (root) CMD (/opt/linux-oom-lab/monitor.sh >> /var/log/linux-oom-lab/cron.log 2>&1)
+2026-11-05T09:10:02+03:00 lima-linux-oom-lab CRON[5389]: pam_unix(cron:session): session closed for user root
+2026-11-05T09:15:01+03:00 lima-linux-oom-lab CRON[5724]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-11-05T09:15:01+03:00 lima-linux-oom-lab CRON[5723]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-11-05T09:15:01+03:00 lima-linux-oom-lab CRON[5725]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+2026-11-05T09:15:01+03:00 lima-linux-oom-lab CRON[5726]: (root) CMD (/opt/linux-oom-lab/monitor.sh >> /var/log/linux-oom-lab/cron.log 2>&1)
+2026-11-05T09:15:01+03:00 lima-linux-oom-lab CRON[5723]: pam_unix(cron:session): session closed for user root
+2026-11-05T09:15:02+03:00 lima-linux-oom-lab CRON[5724]: pam_unix(cron:session): session closed for user root

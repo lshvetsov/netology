@@ -1,0 +1,17 @@
+===== 2026-11-05T09:12:44+03:00 =====
+ПАМЯТЬ И SWAP (МиБ)
+               total        used        free      shared  buff/cache   available
+Mem:             954         181         783           0          54         773
+Swap:            511          32         479
+Доступно RAM: 81%; занято swap: 6%
+CPU (us + sy за 1 секунду): 0%
+ 09:12:44 up  1:36,  1 user,  load average: 0.00, 0.00, 0.00
+[...]
+ДИАГНОСТИКА
+RAM: запас более 10% или равен 10%
+Swap: заполнение менее 90%
+CPU: загрузка менее 85%
+ОШИБКИ И КРИТИЧЕСКИЕ СОБЫТИЯ (уровни 0-3, за 10 минут)
+2026-11-05T09:12:41+03:00 lima-linux-oom-lab kernel: Out of memory: Killed process 4790
+(python3) total-vm:1314144kB, anon-rss:805888kB, file-rss:1664kB, shmem-rss:0kB, UID:999
+pgtables:2608kB oom_score_adj:700

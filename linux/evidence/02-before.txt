@@ -1,0 +1,26 @@
+===== 2026-11-05T08:59:34+03:00 =====
+ПАМЯТЬ И SWAP (МиБ)
+               total        used        free      shared  buff/cache   available
+Mem:             954         204         754           0          66         750
+Swap:            511           0         511
+Доступно RAM: 78%; занято swap: 0%
+CPU (us + sy за 1 секунду): 0%
+ 08:59:34 up  1:23,  1 user,  load average: 0.00, 0.01, 0.00
+ПРОЦЕССЫ С НАИБОЛЬШИМ RSS (КиБ)
+    PID COMMAND           RSS %CPU
+    328 multipathd      26240  0.0
+    640 lima-guestagent 19272  0.0
+    698 unattended-upgr 11904  0.0
+      1 systemd          9828  0.0
+    704 systemd          7452  0.0
+ДИАГНОСТИКА
+RAM: запас более 10% или равен 10%
+Swap: заполнение менее 90%
+CPU: загрузка менее 85%
+ОШИБКИ И КРИТИЧЕСКИЕ СОБЫТИЯ (уровни 0-3, за 10 минут)
+2026-11-05T08:55:43+03:00 lima-linux-oom-lab kernel: Out of memory: Killed process 3473 (python3) total-vm:1330536kB, anon-rss:826496kB, file-rss:1664kB, shmem-rss:0kB, UID:999 pgtables:2640kB oom_score_adj:700
+OOM В ЖУРНАЛЕ ЯДРА (за 10 минут)
+2026-11-05T08:55:43+03:00 lima-linux-oom-lab kernel: systemd-journal invoked oom-killer: gfp_mask=0x140cca(GFP_HIGHUSER_MOVABLE|__GFP_COMP), order=0, oom_score_adj=-250
+2026-11-05T08:55:43+03:00 lima-linux-oom-lab kernel: oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=system.slice,mems_allowed=0,global_oom,task_memcg=/system.slice/linux-oom-student.service,task=python3,pid=3473,uid=999
+2026-11-05T08:55:43+03:00 lima-linux-oom-lab kernel: Out of memory: Killed process 3473 (python3) total-vm:1330536kB, anon-rss:826496kB, file-rss:1664kB, shmem-rss:0kB, UID:999 pgtables:2640kB oom_score_adj:700
+

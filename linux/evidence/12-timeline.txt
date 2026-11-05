@@ -1,0 +1,215 @@
+2026-11-05T08:59:34+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         222         730           0          75         732
+Swap:            511           0         511
+    PID COMMAND           RSS %CPU
+   4790 python3         19432  2.7
+Result=success
+ActiveState=active
+2026-11-05T09:00:05+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         269         683           0          75         685
+Swap:            511           0         511
+    PID COMMAND           RSS %CPU
+   4790 python3         68608  0.0
+Result=success
+ActiveState=active
+2026-11-05T09:00:35+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         323         629           0          76         631
+Swap:            511           0         511
+    PID COMMAND           RSS %CPU
+   4790 python3         117784 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:01:05+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         364         587           0          76         589
+Swap:            511           0         511
+    PID COMMAND           RSS %CPU
+   4790 python3         166960 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:01:35+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         412         539           0          76         542
+Swap:            511           0         511
+    PID COMMAND           RSS %CPU
+   4790 python3         216136 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:02:06+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         467         483           0          76         487
+Swap:            511           0         511
+    PID COMMAND           RSS %CPU
+   4790 python3         265312 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:02:36+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         515         436           0          76         439
+Swap:            511           0         511
+    PID COMMAND           RSS %CPU
+   4790 python3         314488 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:03:06+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         564         387           0          76         390
+Swap:            511           0         511
+    PID COMMAND           RSS %CPU
+   4790 python3         363664 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:03:36+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         611         339           0          76         342
+Swap:            511           0         511
+    PID COMMAND           RSS %CPU
+   4790 python3         412840 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:04:07+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         660         291           0          76         294
+Swap:            511           0         511
+    PID COMMAND           RSS %CPU
+   4790 python3         462016 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:04:37+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         701         250           0          76         253
+Swap:            511           0         511
+    PID COMMAND           RSS %CPU
+   4790 python3         511192 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:05:07+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         749         201           0          76         205
+Swap:            511           0         511
+    PID COMMAND           RSS %CPU
+   4790 python3         560372 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:05:38+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         797         154           0          76         157
+Swap:            511           0         511
+    PID COMMAND           RSS %CPU
+   4790 python3         609548 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:06:08+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         845         105           0          76         109
+Swap:            511           0         511
+    PID COMMAND           RSS %CPU
+   4790 python3         658724 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:06:38+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         891          61           0          74          63
+Swap:            511           6         505
+    PID COMMAND           RSS %CPU
+   4790 python3         707900 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:07:09+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         905          56           0          59          49
+Swap:            511          31         480
+    PID COMMAND           RSS %CPU
+   4790 python3         757076 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:07:39+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         908          57           0          50          46
+Swap:            511          71         440
+    PID COMMAND           RSS %CPU
+   4790 python3         764376 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:08:09+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         906          59           0          52          48
+Swap:            511         130         381
+    PID COMMAND           RSS %CPU
+   4790 python3         754716 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:08:40+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         906          58           0          52          48
+Swap:            511         170         341
+    PID COMMAND           RSS %CPU
+   4790 python3         761804 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:09:10+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         907          58           0          51          47
+Swap:            511         231         280
+    PID COMMAND           RSS %CPU
+   4790 python3         758136 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:09:40+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         906          58           0          51          48
+Swap:            511         276         235
+    PID COMMAND           RSS %CPU
+   4790 python3         761044 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:10:11+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         903          57           0          59          51
+Swap:            511         343         168
+    PID COMMAND           RSS %CPU
+   4790 python3         741228 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:10:41+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         904          57           0          60          50
+Swap:            511         387         124
+    PID COMMAND           RSS %CPU
+   4790 python3         744872 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:11:11+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         861          59           0         107          93
+Swap:            511         487          24
+    PID COMMAND           RSS %CPU
+   4790 python3         689668 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:11:42+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         877          57           0          92          77
+Swap:            511         511           0
+    PID COMMAND           RSS %CPU
+   4790 python3         713060 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:12:12+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         913          54           0          47          41
+Swap:            511         511           0
+    PID COMMAND           RSS %CPU
+   4790 python3         761904 0.0
+Result=success
+ActiveState=active
+2026-11-05T09:12:42+03:00
+               total        used        free      shared  buff/cache   available
+Mem:             954         174         795           0          43         780
+Swap:            511          32         479
+    PID COMMAND           RSS %CPU
+Result=oom-kill
+ActiveState=failed

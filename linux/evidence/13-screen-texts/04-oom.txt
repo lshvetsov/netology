@@ -1,0 +1,16 @@
+2026-11-05T09:12:41.451868+03:00 lima-linux-oom-lab kernel: python3 invoked oom-killer:
+gfp_mask=0x440dc0(GFP_KERNEL_ACCOUNT|__GFP_COMP|__GFP_ZERO), order=0, oom_score_adj=700
+2026-11-05T09:12:41.456975+03:00 lima-linux-oom-lab kernel: Free swap  = 40kB
+2026-11-05T09:12:41.456984+03:00 lima-linux-oom-lab kernel: Total swap = 524284kB
+2026-11-05T09:12:41.457395+03:00 lima-linux-oom-lab kernel: oom-kill:constraint=CONSTRAINT_NONE
+,nodemask=(null),cpuset=system.slice,mems_allowed=0,global_oom,task_memcg=/system.slice/linux-o
+om-student.service,task=python3,pid=4790,uid=999
+2026-11-05T09:12:41.457404+03:00 lima-linux-oom-lab kernel: Out of memory: Killed process 4790
+(python3) total-vm:1314144kB, anon-rss:805888kB, file-rss:1664kB, shmem-rss:0kB, UID:999
+pgtables:2608kB oom_score_adj:700
+
+Result=oom-kill
+ExecMainPID=4790
+ExecMainCode=2
+ExecMainStatus=9
+ActiveState=failed

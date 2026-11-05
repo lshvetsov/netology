@@ -1,0 +1,16 @@
+● linux-oom-student.service - /usr/bin/python3 -u /opt/linux-oom-lab/leak.py
+     Loaded: loaded (/run/systemd/transient/linux-oom-student.service; transient)
+  Transient: yes
+     Active: active (running) since Thu 2026-11-05 08:59:34 MSK; 95ms ago
+      Until: Thu 2026-11-05 09:29:34 MSK; 29min left
+   Main PID: 4790 (python3)
+      Tasks: 1 (limit: 1059)
+     Memory: 21.2M (peak: 21.5M)
+        CPU: 20ms
+     CGroup: /system.slice/linux-oom-student.service
+             └─4790 /usr/bin/python3 -u /opt/linux-oom-lab/leak.py
+
+Nov 05 08:59:34 lima-linux-oom-lab systemd[1]: Started linux-oom-student.service - /usr/bin/python3 -u /opt/linux-oom-lab/leak.py.
+Nov 05 08:59:34 lima-linux-oom-lab python3[4791]: apple
+Nov 05 08:59:34 lima-linux-oom-lab python3[4790]: PID=4790
+Nov 05 08:59:34 lima-linux-oom-lab python3[4790]: Выделено 8 МиБ

@@ -1,0 +1,17 @@
++ grep PRETTY_NAME /etc/os-release
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
++ uname -r
+6.8.0-142-generic
++ nproc
+2
++ systemd-detect-virt --vm
+apple
++ swapon --show
+NAME      TYPE SIZE USED PRIO
+/swapfile file 512M   0B   -2
++ cat /etc/cron.d/linux-oom-monitor
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+*/5 * * * * root /opt/linux-oom-lab/monitor.sh >> /var/log/linux-oom-lab/cron.log 2>&1
++ systemctl is-active cron
+active

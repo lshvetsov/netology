@@ -1,0 +1,82 @@
+2026-11-05T09:12:41.451868+03:00 lima-linux-oom-lab kernel: python3 invoked oom-killer: gfp_mask=0x440dc0(GFP_KERNEL_ACCOUNT|__GFP_COMP|__GFP_ZERO), order=0, oom_score_adj=700
+2026-11-05T09:12:41.456182+03:00 lima-linux-oom-lab kernel: CPU: 0 PID: 4790 Comm: python3 Not tainted 6.8.0-142-generic #142-Ubuntu
+2026-11-05T09:12:41.456206+03:00 lima-linux-oom-lab kernel: Hardware name: Apple Inc. Apple Virtualization Generic Platform, BIOS 2075.140.4.0.0 07/20/2025
+2026-11-05T09:12:41.456313+03:00 lima-linux-oom-lab kernel: Call trace:
+2026-11-05T09:12:41.456325+03:00 lima-linux-oom-lab kernel:  dump_backtrace+0xa4/0x150
+2026-11-05T09:12:41.456333+03:00 lima-linux-oom-lab kernel:  show_stack+0x24/0x50
+2026-11-05T09:12:41.456341+03:00 lima-linux-oom-lab kernel:  dump_stack_lvl+0xc8/0x138
+2026-11-05T09:12:41.456362+03:00 lima-linux-oom-lab kernel:  dump_stack+0x1c/0x38
+2026-11-05T09:12:41.456376+03:00 lima-linux-oom-lab kernel:  dump_header+0x48/0x220
+2026-11-05T09:12:41.456468+03:00 lima-linux-oom-lab kernel:  oom_kill_process+0x1f8/0x3e0
+2026-11-05T09:12:41.456477+03:00 lima-linux-oom-lab kernel:  out_of_memory+0xe8/0x3a0
+2026-11-05T09:12:41.456557+03:00 lima-linux-oom-lab kernel:  __alloc_pages_may_oom+0x144/0x218
+2026-11-05T09:12:41.456567+03:00 lima-linux-oom-lab kernel:  __alloc_pages_slowpath.constprop.0+0x570/0x9a8
+2026-11-05T09:12:41.456575+03:00 lima-linux-oom-lab kernel:  __alloc_pages+0x2f0/0x3a8
+2026-11-05T09:12:41.456581+03:00 lima-linux-oom-lab kernel:  alloc_pages_mpol+0x94/0x290
+2026-11-05T09:12:41.456589+03:00 lima-linux-oom-lab kernel:  alloc_pages+0x6c/0x118
+2026-11-05T09:12:41.456597+03:00 lima-linux-oom-lab kernel:  __pte_alloc+0x48/0x1c0
+2026-11-05T09:12:41.456604+03:00 lima-linux-oom-lab kernel:  do_anonymous_page+0x348/0x400
+2026-11-05T09:12:41.456614+03:00 lima-linux-oom-lab kernel:  do_pte_missing+0xe4/0x3f8
+2026-11-05T09:12:41.456622+03:00 lima-linux-oom-lab kernel:  handle_pte_fault+0x12c/0x1a0
+2026-11-05T09:12:41.456631+03:00 lima-linux-oom-lab kernel:  __handle_mm_fault+0x24c/0x400
+2026-11-05T09:12:41.456639+03:00 lima-linux-oom-lab kernel:  handle_mm_fault+0xac/0x2e0
+2026-11-05T09:12:41.456646+03:00 lima-linux-oom-lab kernel:  do_page_fault+0xfc/0x528
+2026-11-05T09:12:41.456654+03:00 lima-linux-oom-lab kernel:  do_translation_fault+0x74/0xc8
+2026-11-05T09:12:41.456661+03:00 lima-linux-oom-lab kernel:  do_mem_abort+0x50/0xd0
+2026-11-05T09:12:41.456667+03:00 lima-linux-oom-lab kernel:  el0_da+0x4c/0x178
+2026-11-05T09:12:41.456678+03:00 lima-linux-oom-lab kernel:  el0t_64_sync_handler+0xdc/0x158
+2026-11-05T09:12:41.456685+03:00 lima-linux-oom-lab kernel:  el0t_64_sync+0x1b0/0x1b8
+2026-11-05T09:12:41.456693+03:00 lima-linux-oom-lab kernel: Mem-Info:
+2026-11-05T09:12:41.456702+03:00 lima-linux-oom-lab kernel: active_anon:97577 inactive_anon:110037 isolated_anon:0
+                                                             active_file:14 inactive_file:22 isolated_file:0
+                                                             unevictable:6559 dirty:0 writeback:10
+                                                             slab_reclaimable:2372 slab_unreclaimable:11221
+                                                             mapped:2116 shmem:10 pagetables:1233
+                                                             sec_pagetables:0 bounce:0
+                                                             kernel_misc_reclaimable:0
+                                                             free:10732 free_pcp:381 free_cma:5604
+2026-11-05T09:12:41.456718+03:00 lima-linux-oom-lab kernel: Node 0 active_anon:390308kB inactive_anon:440148kB active_file:56kB inactive_file:88kB unevictable:26236kB isolated(anon):0kB isolated(file):0kB mapped:8464kB dirty:0kB writeback:40kB shmem:40kB shmem_thp:0kB shmem_pmdmapped:0kB anon_thp:0kB writeback_tmp:0kB kernel_stack:2176kB shadow_call_stack:552kB pagetables:4932kB sec_pagetables:0kB all_unreclaimable? yes
+2026-11-05T09:12:41.456729+03:00 lima-linux-oom-lab kernel: Node 0 DMA free:42928kB boost:0kB min:22528kB low:28160kB high:33792kB reserved_highatomic:0KB active_anon:390308kB inactive_anon:440148kB active_file:220kB inactive_file:108kB unevictable:26236kB writepending:108kB present:1048576kB managed:977872kB mlocked:26236kB bounce:0kB free_pcp:1524kB local_pcp:1476kB free_cma:22416kB
+2026-11-05T09:12:41.456738+03:00 lima-linux-oom-lab kernel: lowmem_reserve[]: 0 0 0 0 0
+2026-11-05T09:12:41.456747+03:00 lima-linux-oom-lab kernel: Node 0 DMA: 836*4kB (UME) 364*8kB (UE) 250*16kB (UEC) 125*32kB (UME) 62*64kB (UMEC) 33*128kB (UMEC) 18*256kB (UEC) 5*512kB (C) 5*1024kB (C) 4*2048kB (C) 0*4096kB 0*8192kB 0*16384kB 0*32768kB = 42928kB
+2026-11-05T09:12:41.456757+03:00 lima-linux-oom-lab kernel: Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=1048576kB
+2026-11-05T09:12:41.456765+03:00 lima-linux-oom-lab kernel: Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=32768kB
+2026-11-05T09:12:41.456772+03:00 lima-linux-oom-lab kernel: Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=2048kB
+2026-11-05T09:12:41.456780+03:00 lima-linux-oom-lab kernel: Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=64kB
+2026-11-05T09:12:41.456788+03:00 lima-linux-oom-lab kernel: 2804 total pagecache pages
+2026-11-05T09:12:41.456965+03:00 lima-linux-oom-lab kernel: 899 pages in swap cache
+2026-11-05T09:12:41.456975+03:00 lima-linux-oom-lab kernel: Free swap  = 40kB
+2026-11-05T09:12:41.456984+03:00 lima-linux-oom-lab kernel: Total swap = 524284kB
+2026-11-05T09:12:41.456992+03:00 lima-linux-oom-lab kernel: 262144 pages RAM
+2026-11-05T09:12:41.457087+03:00 lima-linux-oom-lab kernel: 0 pages HighMem/MovableOnly
+2026-11-05T09:12:41.457095+03:00 lima-linux-oom-lab kernel: 17676 pages reserved
+2026-11-05T09:12:41.457102+03:00 lima-linux-oom-lab kernel: 8192 pages cma reserved
+2026-11-05T09:12:41.457110+03:00 lima-linux-oom-lab kernel: 0 pages hwpoisoned
+2026-11-05T09:12:41.457116+03:00 lima-linux-oom-lab kernel: Tasks state (memory values in pages):
+2026-11-05T09:12:41.457125+03:00 lima-linux-oom-lab kernel: [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+2026-11-05T09:12:41.457136+03:00 lima-linux-oom-lab kernel: [    271]     0   271     8512      763      128      635         0    81920      160          -250 systemd-journal
+2026-11-05T09:12:41.457144+03:00 lima-linux-oom-lab kernel: [    328]     0   328    72536     6496     4672     1824         0   114688        0         -1000 multipathd
+2026-11-05T09:12:41.457152+03:00 lima-linux-oom-lab kernel: [    336]     0   336     6551      640      160      480         0    73728      640         -1000 systemd-udevd
+2026-11-05T09:12:41.457161+03:00 lima-linux-oom-lab kernel: [    435]   991   435     5358      704      128      576         0    90112      416             0 systemd-resolve
+2026-11-05T09:12:41.457170+03:00 lima-linux-oom-lab kernel: [    446]   996   446    22706      672       64      608         0    81920      160             0 systemd-timesyn
+2026-11-05T09:12:41.457177+03:00 lima-linux-oom-lab kernel: [    575]   998   575     4693      640       64      576         0    81920      224             0 systemd-network
+2026-11-05T09:12:41.457186+03:00 lima-linux-oom-lab kernel: [    635]     0   635     1787      480       32      448         0    53248       32             0 cron
+2026-11-05T09:12:41.457194+03:00 lima-linux-oom-lab kernel: [    636]   101   636     2490      800      128      672         0    65536       96          -900 dbus-daemon
+2026-11-05T09:12:41.457204+03:00 lima-linux-oom-lab kernel: [    640]     0   640   320346     2144     1600      544         0   167936      477          -500 lima-guestagent
+2026-11-05T09:12:41.457213+03:00 lima-linux-oom-lab kernel: [    642]   989   642    77267      736       64      672         0   102400      160             0 polkitd
+2026-11-05T09:12:41.457221+03:00 lima-linux-oom-lab kernel: [    651]     0   651     4595      672       64      608         0    77824      288             0 systemd-logind
+2026-11-05T09:12:41.457228+03:00 lima-linux-oom-lab kernel: [    656]     0   656   118144      960      224      736         0   155648      320             0 udisksd
+2026-11-05T09:12:41.457236+03:00 lima-linux-oom-lab kernel: [    667]     0   667     3044      512       32      480         0    65536      224         -1000 sshd
+2026-11-05T09:12:41.457243+03:00 lima-linux-oom-lab kernel: [    696]     0   696     1430      352        0      352         0    53248       32             0 agetty
+2026-11-05T09:12:41.457252+03:00 lima-linux-oom-lab kernel: [    698]     0   698    27722      704       32      672         0   122880     2304             0 unattended-upgr
+2026-11-05T09:12:41.457266+03:00 lima-linux-oom-lab kernel: [    704]   502   704     5058      672       96      576         0    81920      416           100 systemd
+2026-11-05T09:12:41.457329+03:00 lima-linux-oom-lab kernel: [    708]     0   708     1419      352        0      352         0    53248        0             0 agetty
+2026-11-05T09:12:41.457339+03:00 lima-linux-oom-lab kernel: [    714]   102   714    55703      736       96      640         0    86016      256             0 rsyslogd
+2026-11-05T09:12:41.457346+03:00 lima-linux-oom-lab kernel: [    716]   502   716     5564      334       46      288         0    86016      320           100 (sd-pam)
+2026-11-05T09:12:41.457355+03:00 lima-linux-oom-lab kernel: [    728]     0   728    81274      768       96      672         0   147456      416             0 ModemManager
+2026-11-05T09:12:41.457364+03:00 lima-linux-oom-lab kernel: [   1236]     0  1236     4072      576       64      512         0    81920      288             0 sshd
+2026-11-05T09:12:41.457371+03:00 lima-linux-oom-lab kernel: [   1286]   502  1286     4271      463      111      352         0    86016      480             0 sshd
+2026-11-05T09:12:41.457377+03:00 lima-linux-oom-lab kernel: [   4790]   999  4790   328536   201888   201472      416         0  2670592   122816           700 python3
+2026-11-05T09:12:41.457387+03:00 lima-linux-oom-lab kernel: [   5476]     0  5476   101156     2002     1362      640         0   253952        0             0 fwupd
+2026-11-05T09:12:41.457395+03:00 lima-linux-oom-lab kernel: oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=system.slice,mems_allowed=0,global_oom,task_memcg=/system.slice/linux-oom-student.service,task=python3,pid=4790,uid=999
+2026-11-05T09:12:41.457404+03:00 lima-linux-oom-lab kernel: Out of memory: Killed process 4790 (python3) total-vm:1314144kB, anon-rss:805888kB, file-rss:1664kB, shmem-rss:0kB, UID:999 pgtables:2608kB oom_score_adj:700

@@ -1,0 +1,19 @@
+===== 2026-11-05T08:59:34+03:00 =====
+ПАМЯТЬ И SWAP (МиБ)
+               total        used        free      shared  buff/cache   available
+Mem:             954         204         754           0          66         750
+Swap:            511           0         511
+Доступно RAM: 78%; занято swap: 0%
+CPU (us + sy за 1 секунду): 0%
+ 08:59:34 up  1:23,  1 user,  load average: 0.00, 0.01, 0.00
+ПРОЦЕССЫ С НАИБОЛЬШИМ RSS (КиБ)
+    PID COMMAND           RSS %CPU
+    328 multipathd      26240  0.0
+    640 lima-guestagent 19272  0.0
+    698 unattended-upgr 11904  0.0
+      1 systemd          9828  0.0
+    704 systemd          7452  0.0
+ДИАГНОСТИКА
+RAM: запас более 10% или равен 10%
+Swap: заполнение менее 90%
+CPU: загрузка менее 85%

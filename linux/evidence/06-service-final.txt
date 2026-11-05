@@ -1,0 +1,5 @@
+Result=oom-kill
+ExecMainPID=4790
+ExecMainCode=2
+ExecMainStatus=9
+ActiveState=failed
