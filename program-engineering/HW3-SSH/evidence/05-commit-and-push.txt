@@ -1,0 +1,18 @@
+Команда: git commit -m "Программная инженерия: SSH-доступ к GitHub"
+
+[main e56486e] Программная инженерия: SSH-доступ к GitHub
+ 6 files changed, 151 insertions(+)
+ create mode 100644 program-engineering/HW3-SSH/.gitignore
+ create mode 100644 program-engineering/HW3-SSH/README.md
+ create mode 100644 program-engineering/HW3-SSH/evidence/01-client-and-key.txt
+ create mode 100644 program-engineering/HW3-SSH/evidence/02-github-key.txt
+ create mode 100644 program-engineering/HW3-SSH/evidence/03-ssh-connection.txt
+ create mode 100644 program-engineering/HW3-SSH/evidence/04-clone.txt
+
+Команда: git push origin main
+
+To github.com:lshvetsov/netology.git
+   90b0d2f..e56486e  main -> main
+
+После отправки два коммита этой работы были объединены в один.
+Выше сохранён вывод первой отправки, поэтому в нём указан прежний хеш.

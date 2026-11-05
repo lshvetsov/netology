@@ -1,0 +1,4 @@
+Аккаунт GitHub: lshvetsov
+Проверка: https://api.github.com/users/lshvetsov/keys
+Публичный ключ найден в аккаунте: да
+Отпечаток: 256 SHA256:rqiwg8WWI6+LlU76lzFoLk5GUY2Ihn3CntV0mOnpwfg netology-hw3 (ED25519)

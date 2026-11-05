@@ -1,0 +1,5 @@
+Команда: ssh -o BatchMode=yes -o StrictHostKeyChecking=yes -T git@github.com
+
+Hi lshvetsov! You've successfully authenticated, but GitHub does not provide shell access.
+
+GitHub подтвердил аутентификацию. Запрос пароля запрещён параметром BatchMode=yes.

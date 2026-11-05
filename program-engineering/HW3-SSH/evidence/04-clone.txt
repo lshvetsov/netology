@@ -1,0 +1,6 @@
+Команда: git clone git@github.com:lshvetsov/netology.git netology-ssh
+
+Cloning into 'netology-ssh'...
+
+origin	git@github.com:lshvetsov/netology.git (fetch)
+origin	git@github.com:lshvetsov/netology.git (push)

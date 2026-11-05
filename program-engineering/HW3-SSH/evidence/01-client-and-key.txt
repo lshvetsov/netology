@@ -1,0 +1,13 @@
+SSH-клиент
+OpenSSH_9.9p2, LibreSSL 3.3.6
+
+Новый ключ
+256 SHA256:rqiwg8WWI6+LlU76lzFoLk5GUY2Ihn3CntV0mOnpwfg netology-hw3 (ED25519)
+
+Защита приватного ключа
+Проверка с пустой парольной фразой: отказ (incorrect passphrase)
+Права приватного ключа: 600
+Права публичного ключа: 644
+
+Связка ключей macOS
+Ключ загрузился из Связки ключей в ssh-agent.
