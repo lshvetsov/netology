@@ -1,0 +1,44 @@
+version: 2.1
+
+jobs:
+  heroku:
+    docker:
+      - image: cimg/python:3.12
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Test and build
+          command: |
+            cd software-development/HW1 || exit 1
+            python -m unittest discover -s tests -v
+            docker build --platform linux/amd64 --provenance=false -t ci-demo:heroku .
+      - run:
+          name: Publish and release on Heroku
+          command: |
+            : "${HEROKU_APP_NAME:?Set HEROKU_APP_NAME}"
+            : "${HEROKU_APP_URL:?Set HEROKU_APP_URL}"
+            : "${HEROKU_EMAIL:?Set HEROKU_EMAIL}"
+            : "${HEROKU_API_KEY:?Set HEROKU_API_KEY}"
+            image="registry.heroku.com/$HEROKU_APP_NAME/web"
+            printf '%s' "$HEROKU_API_KEY" | docker login --username "$HEROKU_EMAIL" --password-stdin registry.heroku.com
+            docker tag ci-demo:heroku "$image"
+            docker push "$image"
+            image_id=$(docker inspect "$image" --format '{{.Id}}')
+            curl --fail-with-body --silent --show-error --output /dev/null \
+              --request PATCH "https://api.heroku.com/apps/$HEROKU_APP_NAME/formation" \
+              --header "Authorization: Bearer $HEROKU_API_KEY" \
+              --header 'Accept: application/vnd.heroku+json; version=3.docker-releases' \
+              --header 'Content-Type: application/json' \
+              --data "{\"updates\":[{\"type\":\"web\",\"docker_image\":\"$image_id\"}]}"
+            curl --fail --silent --show-error --retry 12 --retry-all-errors \
+              --retry-delay 5 --max-time 10 "${HEROKU_APP_URL%/}/health"
+
+workflows:
+  deploy:
+    jobs:
+      - heroku:
+          serial-group: << pipeline.project.slug >>/heroku
+          filters:
+            branches:
+              only: main

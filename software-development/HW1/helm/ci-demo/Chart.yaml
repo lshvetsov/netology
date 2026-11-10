@@ -1,0 +1,5 @@
+apiVersion: v2
+name: ci-demo
+description: Учебный сервис конвертации температуры
+type: application
+version: 0.1.0

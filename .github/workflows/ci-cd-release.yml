@@ -1,0 +1,41 @@
+name: CI/CD practice release
+
+on:
+  push:
+    tags:
+      - 'ci-cd-v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Test and build
+        working-directory: software-development/HW1
+        run: |
+          python -m unittest discover -s tests -v
+          mkdir -p dist
+          python -m zipapp src/ci_demo -o dist/ci-demo.pyz
+      - name: Generate changelog and create release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          previous=$(git describe --tags --match 'ci-cd-v*' --exclude "$TAG" --abbrev=0 HEAD 2>/dev/null || true)
+          range=HEAD
+          if [ -n "$previous" ]; then
+            range="$previous..HEAD"
+          fi
+          git log --format='- %s (%h)' "$range" -- software-development/HW1 \
+            .github/workflows/ci-cd-practice.yml .github/workflows/ci-cd-release.yml \
+            .gitlab-ci.yml > CHANGELOG.md
+          gh release create "$TAG" software-development/HW1/dist/ci-demo.pyz \
+            --verify-tag --title "$TAG" --notes-file CHANGELOG.md --latest=false

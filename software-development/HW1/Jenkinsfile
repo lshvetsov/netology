@@ -1,0 +1,78 @@
+pipeline {
+    agent any
+    options {
+        disableConcurrentBuilds()
+    }
+    triggers {
+        pollSCM('H/2 * * * *')
+    }
+    environment {
+        APP_IMAGE = "netology-ci-demo:${BUILD_NUMBER}"
+    }
+    stages {
+        stage('Lint') {
+            steps {
+                dir('software-development/HW1') {
+                    sh 'ruff check src tests'
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                dir('software-development/HW1') {
+                    sh 'python3 -m unittest discover -s tests -v'
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                dir('software-development/HW1') {
+                    sh 'docker build -t "$APP_IMAGE" .'
+                }
+            }
+        }
+        stage('Publish') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub',
+                        usernameVariable: 'DOCKERHUB_USER', passwordVariable: 'DOCKERHUB_TOKEN')]) {
+                    sh '''
+                        set +x
+                        DOCKER_CONFIG="$(mktemp -d)"
+                        export DOCKER_CONFIG
+                        trap 'rm -rf "$DOCKER_CONFIG"' EXIT
+                        printf '%s' "$DOCKERHUB_TOKEN" | docker login -u "$DOCKERHUB_USER" --password-stdin
+                        IMAGE_TAG="$DOCKERHUB_USER/ci-demo:$GIT_COMMIT"
+                        docker tag "$APP_IMAGE" "$IMAGE_TAG"
+                        docker push "$IMAGE_TAG"
+                    '''
+                }
+            }
+        }
+        stage('Migrate database') {
+            environment {
+                DB_PASSWORD = credentials('ci-db-password')
+            }
+            steps {
+                dir('software-development/HW1') {
+                    sh '''
+                        docker compose up -d --wait --wait-timeout 60 db
+                        docker compose run --rm migrate
+                    '''
+                }
+            }
+        }
+        stage('Deploy') {
+            environment {
+                DB_PASSWORD = credentials('ci-db-password')
+            }
+            steps {
+                dir('software-development/HW1') {
+                    sh '''
+                        docker compose up -d --wait --wait-timeout 60 app
+                        curl --fail --silent --show-error http://127.0.0.1:8081/health
+                    '''
+                }
+            }
+        }
+    }
+}

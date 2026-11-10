@@ -1,0 +1,32 @@
+name: netology-ci-cd
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ci_demo
+      POSTGRES_USER: ci_demo
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD before deploy}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "ci_demo", "-d", "ci_demo"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+  migrate:
+    image: flyway/flyway:11.14.1
+    command: migrate
+    environment:
+      FLYWAY_URL: jdbc:postgresql://db:5432/ci_demo
+      FLYWAY_USER: ci_demo
+      FLYWAY_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD before deploy}
+      FLYWAY_LOCATIONS: filesystem:/flyway/sql
+    volumes:
+      - ./db/migrations:/flyway/sql:ro
+  app:
+    image: ${APP_IMAGE:-netology-ci-demo:local}
+    ports:
+      - "127.0.0.1:8081:8000"
+
+volumes:
+  db-data:

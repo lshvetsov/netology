@@ -1,0 +1,4 @@
+image:
+  repository: netology-ci-demo
+  tag: local
+imagePullSecrets: []

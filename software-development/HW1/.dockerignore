@@ -1,0 +1,4 @@
+**
+!src/
+!src/ci_demo/
+!src/ci_demo/__main__.py

@@ -1,0 +1,53 @@
+stages:
+  - test
+  - build
+  - deploy
+
+unit-tests:
+  stage: test
+  image: python:3.12-slim
+  script:
+    - cd software-development/HW1 && python -m unittest discover -s tests -v
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH'
+
+build-image:
+  stage: build
+  image:
+    name: moby/buildkit:rootless
+    entrypoint: [""]
+  variables:
+    BUILDKITD_FLAGS: --oci-worker-no-process-sandbox
+  before_script:
+    - mkdir -p "$HOME/.docker"
+    - |
+      auth=$(printf '%s:%s' "$CI_REGISTRY_USER" "$CI_REGISTRY_PASSWORD" | base64 | tr -d '\n')
+      printf '{"auths":{"%s":{"auth":"%s"}}}\n' "$CI_REGISTRY" "$auth" > "$HOME/.docker/config.json"
+  script:
+    - |
+      buildctl-daemonless.sh build \
+        --frontend dockerfile.v0 \
+        --local context=software-development/HW1 \
+        --local dockerfile=software-development/HW1 \
+        --output "type=image,name=$CI_REGISTRY_IMAGE:$CI_COMMIT_SHA,push=true"
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+
+deploy-kubernetes:
+  stage: deploy
+  image:
+    name: alpine/helm:3.19.0
+    entrypoint: [""]
+  resource_group: ci-demo
+  script:
+    - export KUBECONFIG="${KUBE_CONFIG:?Add a file variable KUBE_CONFIG}"
+    - helm lint software-development/HW1/helm/ci-demo
+    - |
+      helm upgrade --install ci-demo software-development/HW1/helm/ci-demo \
+        --namespace ci-demo --atomic --timeout 3m \
+        --set-string "image.repository=$CI_REGISTRY_IMAGE" \
+        --set-string "image.tag=$CI_COMMIT_SHA" \
+        --set-string 'imagePullSecrets[0].name=gitlab-registry'
+    - helm status ci-demo --namespace ci-demo
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
